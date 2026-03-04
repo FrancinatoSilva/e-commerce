@@ -21,8 +21,9 @@ public class Carrinho {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID carrinhoId;
 
-    @Column(name = "usuario_id")
-    private Usuario usuario; // Conferir lógica de foreign key!!!
+    @OneToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 
     @Column(name = "data_criacao")
     private LocalDate dataCriacao = LocalDate.now();

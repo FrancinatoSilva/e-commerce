@@ -38,4 +38,7 @@ public class Usuario {
     @OneToMany(mappedBy = "usuario")
     private List<Pedido> pedidos;
 
+    @OneToOne(mappedBy = "usuario")
+    private Carrinho carrinho;
+
 }
