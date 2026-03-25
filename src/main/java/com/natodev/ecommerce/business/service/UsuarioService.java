@@ -59,6 +59,7 @@ public class UsuarioService {
         return new UsuarioResponseDTO(usuario.getUsuarioId(), usuario.getNome(), usuario.getEmail(), usuario.getDataCriacao());
     }
 
+    //PUT
     @Transactional
     public UsuarioResponseDTO atualizarUsuario(UUID usuarioId, UsuarioRequestDTO usuarioRequestDTO) {
         Usuario usuario = usuarioRepository.findById(usuarioId)
@@ -72,5 +73,14 @@ public class UsuarioService {
 
         return new UsuarioResponseDTO(usuarioAtualizado.getUsuarioId(), usuarioAtualizado.getNome(), usuarioAtualizado.getEmail(),
                 usuarioAtualizado.getDataCriacao());
+    }
+
+    @Transactional
+    public void deletarUsuario(UUID usuarioId) {
+        Usuario usuario = usuarioRepository.findById(usuarioId)
+                .orElseThrow(() -> new UsuarioNaoEncontradoException("Usuario com id " + usuarioId +
+                        " não foi encontrado!"));
+
+        usuarioRepository.delete(usuario);
     }
 }
