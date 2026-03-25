@@ -4,12 +4,14 @@ import com.natodev.ecommerce.controller.dto.request.UsuarioRequestDTO;
 import com.natodev.ecommerce.controller.dto.response.UsuarioResponseDTO;
 import com.natodev.ecommerce.infrastructure.entity.Usuario;
 import com.natodev.ecommerce.infrastructure.exception.EmailCadastradoException;
+import com.natodev.ecommerce.infrastructure.exception.UsuarioNaoEncontradoException;
 import com.natodev.ecommerce.infrastructure.repository.UsuarioRepository;
 import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -46,6 +48,15 @@ public class UsuarioService {
                 ))
                 .collect(Collectors.toList());
 
+    }
+
+    @Transactional(readOnly = true)
+    public UsuarioResponseDTO buscarUsuarioPorId(UUID usuarioId) {
+        Usuario usuario = usuarioRepository.findById(usuarioId)
+                .orElseThrow(() -> new UsuarioNaoEncontradoException("Usuário com id " + usuarioId +
+                        " não foi encontrado!"));
+
+        return new UsuarioResponseDTO(usuario.getUsuarioId(), usuario.getNome(), usuario.getEmail(), usuario.getDataCriacao());
     }
 
 }
