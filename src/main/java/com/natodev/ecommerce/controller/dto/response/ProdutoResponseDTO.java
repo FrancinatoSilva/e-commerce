@@ -1,5 +1,7 @@
 package com.natodev.ecommerce.controller.dto.response;
 
+import com.natodev.ecommerce.infrastructure.entity.Categoria;
+
 import java.math.BigDecimal;
 import java.util.UUID;
 
@@ -10,7 +12,7 @@ public record ProdutoResponseDTO(
         String descricao,
         BigDecimal preco,
         Integer estoque,
-        String nomeCategoria
+        Categoria categoriaProduto
 
 
 ) {}

@@ -1,5 +1,6 @@
 package com.natodev.ecommerce.controller.dto.request;
 
+import com.natodev.ecommerce.infrastructure.entity.Categoria;
 import jakarta.validation.constraints.*;
 
 import java.math.BigDecimal;
@@ -24,5 +25,5 @@ public record ProdutoRequestDTO(
         Integer estoque,
 
         @NotNull(message = "Todo produto precisa de categoria")
-        UUID categoriaId
+        Categoria categoriaProduto
 ) {}
