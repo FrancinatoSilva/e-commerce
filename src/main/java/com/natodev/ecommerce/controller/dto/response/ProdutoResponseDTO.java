@@ -12,7 +12,7 @@ public record ProdutoResponseDTO(
         String descricao,
         BigDecimal preco,
         Integer estoque,
-        Categoria categoriaProduto
+        String nomeCategoria
 
 
 ) {}

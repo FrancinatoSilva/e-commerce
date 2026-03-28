@@ -25,5 +25,5 @@ public record ProdutoRequestDTO(
         Integer estoque,
 
         @NotNull(message = "Todo produto precisa de categoria")
-        Categoria categoriaProduto
+        UUID categoriaProduto
 ) {}
