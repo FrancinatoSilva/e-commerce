@@ -5,6 +5,7 @@ import com.natodev.ecommerce.controller.dto.response.ProdutoResponseDTO;
 import com.natodev.ecommerce.infrastructure.entity.Categoria;
 import com.natodev.ecommerce.infrastructure.entity.Produto;
 import com.natodev.ecommerce.infrastructure.exception.CategoriaNaoExisteException;
+import com.natodev.ecommerce.infrastructure.repository.CategoriaRepository;
 import com.natodev.ecommerce.infrastructure.repository.ProdutoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 public class ProdutoService {
 
     private final ProdutoRepository produtoRepository;
+    private final CategoriaRepository categoriaRepository;
 
     @Transactional
     public ProdutoResponseDTO salvarProduto(ProdutoRequestDTO produtoRequestDTO) {
@@ -28,20 +30,21 @@ public class ProdutoService {
         produto.setDescricao(produtoRequestDTO.descricao());
         produto.setPreco(produtoRequestDTO.preco());
         produto.setEstoque(produtoRequestDTO.estoque());
-        produto.setCategoria(produtoRequestDTO.categoriaProduto());
 
-        if (produtoRepository.existsByCategoria(produto.getCategoria())) {
-            throw new CategoriaNaoExisteException("Categoria " +  produtoRequestDTO.categoriaProduto() + " não existe!");
-        }
+        Categoria categoria = categoriaRepository.findById(produtoRequestDTO.categoriaProduto())
+                .orElseThrow(() -> new CategoriaNaoExisteException("Categoria com id " + produtoRequestDTO.categoriaProduto() +
+                        " não foi encontrado!"));
+
+        produto.setCategoria(categoria);
 
         Produto produtoSalvo = produtoRepository.save(produto);
 
         return new ProdutoResponseDTO(produtoSalvo.getProdutoId(), produtoSalvo.getNome(), produtoSalvo.getDescricao(),
-                produtoSalvo.getPreco(), produtoSalvo.getEstoque(), produtoSalvo.getCategoria());
+                produtoSalvo.getPreco(), produtoSalvo.getEstoque(), produtoSalvo.getCategoria().getNome());
     }
 
     @Transactional(readOnly = true)
-    public List<ProdutoResponseDTO> listarProdutos(String nome, Categoria categoria) {
+    public List<ProdutoResponseDTO> listarProdutos() {
         return produtoRepository.findAll()
                 .stream()
                 .map(produto -> new ProdutoResponseDTO(
@@ -50,7 +53,7 @@ public class ProdutoService {
                         produto.getDescricao(),
                         produto.getPreco(),
                         produto.getEstoque(),
-                        produto.getCategoria()
+                        produto.getCategoria().getNome()
                 ))
                 .collect(Collectors.toList());
     }
