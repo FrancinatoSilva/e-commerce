@@ -1,10 +1,10 @@
 package com.natodev.ecommerce.infrastructure.entity;
 
+import com.natodev.ecommerce.domain.product.domain.entity.Produto;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
-import java.util.List;
 import java.util.UUID;
 
 @Getter

@@ -2,8 +2,8 @@ package com.natodev.ecommerce.business.service;
 
 import com.natodev.ecommerce.controller.dto.request.ProdutoRequestDTO;
 import com.natodev.ecommerce.controller.dto.response.ProdutoResponseDTO;
-import com.natodev.ecommerce.infrastructure.entity.Categoria;
-import com.natodev.ecommerce.infrastructure.entity.Produto;
+import com.natodev.ecommerce.domain.product.domain.entity.Categoria;
+import com.natodev.ecommerce.domain.product.domain.entity.Produto;
 import com.natodev.ecommerce.infrastructure.exception.CategoriaNaoExisteException;
 import com.natodev.ecommerce.infrastructure.repository.CategoriaRepository;
 import com.natodev.ecommerce.infrastructure.repository.ProdutoRepository;

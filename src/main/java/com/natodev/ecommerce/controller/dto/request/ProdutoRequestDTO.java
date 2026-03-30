@@ -1,6 +1,5 @@
 package com.natodev.ecommerce.controller.dto.request;
 
-import com.natodev.ecommerce.infrastructure.entity.Categoria;
 import jakarta.validation.constraints.*;
 
 import java.math.BigDecimal;

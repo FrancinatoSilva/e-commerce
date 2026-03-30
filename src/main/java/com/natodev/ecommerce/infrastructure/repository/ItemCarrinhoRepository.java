@@ -2,7 +2,7 @@ package com.natodev.ecommerce.infrastructure.repository;
 
 import com.natodev.ecommerce.infrastructure.entity.Carrinho;
 import com.natodev.ecommerce.infrastructure.entity.ItemCarrinho;
-import com.natodev.ecommerce.infrastructure.entity.Produto;
+import com.natodev.ecommerce.domain.product.domain.entity.Produto;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
