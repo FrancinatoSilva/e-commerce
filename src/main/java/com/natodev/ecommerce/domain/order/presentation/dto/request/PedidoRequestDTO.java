@@ -1,4 +1,4 @@
-package com.natodev.ecommerce.controller.dto.request;
+package com.natodev.ecommerce.domain.order.presentation.dto.request;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;

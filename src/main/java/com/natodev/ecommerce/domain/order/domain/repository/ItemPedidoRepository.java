@@ -1,7 +1,7 @@
-package com.natodev.ecommerce.infrastructure.repository;
+package com.natodev.ecommerce.domain.order.domain.repository;
 
-import com.natodev.ecommerce.infrastructure.entity.ItemPedido;
-import com.natodev.ecommerce.infrastructure.entity.Pedido;
+import com.natodev.ecommerce.domain.order.domain.entity.ItemPedido;
+import com.natodev.ecommerce.domain.order.domain.entity.Pedido;
 import com.natodev.ecommerce.domain.product.domain.entity.Produto;
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,4 +1,4 @@
-package com.natodev.ecommerce.infrastructure.entity;
+package com.natodev.ecommerce.domain.order.domain.entity;
 
 import com.natodev.ecommerce.domain.product.domain.entity.Produto;
 import jakarta.persistence.*;
@@ -13,25 +13,29 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "item_carrinho")
-public class ItemCarrinho {
+@Table(name = "item_pedido")
+public class ItemPedido {
 
     @Id
-    @Column(name = "item_carrinho_id")
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID itemCarrinhoId;
+    @Column(name = "item_pedido_id")
+    private UUID itemPedidoId;
 
     @ManyToOne
-    @JoinColumn(name = "carrinho_id")
-    private Carrinho carrinho;
+    @JoinColumn (name = "pedido_id")
+    private Pedido pedido;
 
     @ManyToOne
-    @JoinColumn(name = "produto_id")
+    @JoinColumn (name = "produto_id")
     private Produto produto;
 
-    @Column (name = "quantidade")
+    @Column(name = "quantidade")
     private Integer quantidade;
 
-    @Column (name = "preco_unitario")
+    @Column(name = "preco_unitario")
     private BigDecimal precoUnitario;
+
+    @Column(name = "sub_total")
+    private BigDecimal subTotal;
+
 }

@@ -1,4 +1,4 @@
-package com.natodev.ecommerce.infrastructure.entity;
+package com.natodev.ecommerce.domain.order.domain.entity;
 
 import com.natodev.ecommerce.domain.user.domain.entity.Usuario;
 import jakarta.persistence.*;
