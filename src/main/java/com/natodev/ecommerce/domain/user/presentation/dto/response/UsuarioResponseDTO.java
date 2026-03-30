@@ -1,4 +1,4 @@
-package com.natodev.ecommerce.controller.dto.response;
+package com.natodev.ecommerce.domain.user.presentation.dto.response;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

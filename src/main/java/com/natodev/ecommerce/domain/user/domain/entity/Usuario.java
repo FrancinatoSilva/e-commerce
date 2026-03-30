@@ -1,5 +1,7 @@
-package com.natodev.ecommerce.infrastructure.entity;
+package com.natodev.ecommerce.domain.user.domain.entity;
 
+import com.natodev.ecommerce.infrastructure.entity.Carrinho;
+import com.natodev.ecommerce.infrastructure.entity.Pedido;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;

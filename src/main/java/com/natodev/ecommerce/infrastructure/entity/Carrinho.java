@@ -1,5 +1,6 @@
 package com.natodev.ecommerce.infrastructure.entity;
 
+import com.natodev.ecommerce.domain.user.domain.entity.Usuario;
 import jakarta.persistence.*;
 import lombok.*;
 

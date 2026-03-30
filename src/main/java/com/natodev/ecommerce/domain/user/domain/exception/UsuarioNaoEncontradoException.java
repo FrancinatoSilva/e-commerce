@@ -1,4 +1,4 @@
-package com.natodev.ecommerce.infrastructure.exception;
+package com.natodev.ecommerce.domain.user.domain.exception;
 
 public class UsuarioNaoEncontradoException extends RuntimeException {
     public UsuarioNaoEncontradoException(String message) {

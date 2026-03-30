@@ -1,11 +1,11 @@
-package com.natodev.ecommerce.business.service;
+package com.natodev.ecommerce.domain.user.application;
 
-import com.natodev.ecommerce.controller.dto.request.UsuarioRequestDTO;
-import com.natodev.ecommerce.controller.dto.response.UsuarioResponseDTO;
-import com.natodev.ecommerce.infrastructure.entity.Usuario;
-import com.natodev.ecommerce.infrastructure.exception.EmailCadastradoException;
-import com.natodev.ecommerce.infrastructure.exception.UsuarioNaoEncontradoException;
-import com.natodev.ecommerce.infrastructure.repository.UsuarioRepository;
+import com.natodev.ecommerce.domain.user.presentation.dto.request.UsuarioRequestDTO;
+import com.natodev.ecommerce.domain.user.presentation.dto.response.UsuarioResponseDTO;
+import com.natodev.ecommerce.domain.user.domain.entity.Usuario;
+import com.natodev.ecommerce.domain.user.domain.exception.EmailCadastradoException;
+import com.natodev.ecommerce.domain.user.domain.exception.UsuarioNaoEncontradoException;
+import com.natodev.ecommerce.domain.user.domain.repository.UsuarioRepository;
 import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

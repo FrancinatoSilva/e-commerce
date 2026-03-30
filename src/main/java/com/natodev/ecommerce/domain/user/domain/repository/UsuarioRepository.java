@@ -1,6 +1,6 @@
-package com.natodev.ecommerce.infrastructure.repository;
+package com.natodev.ecommerce.domain.user.domain.repository;
 
-import com.natodev.ecommerce.infrastructure.entity.Usuario;
+import com.natodev.ecommerce.domain.user.domain.entity.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

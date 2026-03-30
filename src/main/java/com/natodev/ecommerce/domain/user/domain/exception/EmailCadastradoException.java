@@ -1,4 +1,4 @@
-package com.natodev.ecommerce.infrastructure.exception;
+package com.natodev.ecommerce.domain.user.domain.exception;
 
 public class EmailCadastradoException extends RuntimeException {
     public EmailCadastradoException(String message) {

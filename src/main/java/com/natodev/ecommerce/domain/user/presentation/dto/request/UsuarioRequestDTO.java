@@ -1,4 +1,4 @@
-package com.natodev.ecommerce.controller.dto.request;
+package com.natodev.ecommerce.domain.user.presentation.dto.request;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
