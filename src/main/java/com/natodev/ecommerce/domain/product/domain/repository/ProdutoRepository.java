@@ -1,4 +1,4 @@
-package com.natodev.ecommerce.infrastructure.repository;
+package com.natodev.ecommerce.domain.product.domain.repository;
 
 import com.natodev.ecommerce.domain.product.domain.entity.Categoria;
 import com.natodev.ecommerce.domain.product.domain.entity.Produto;

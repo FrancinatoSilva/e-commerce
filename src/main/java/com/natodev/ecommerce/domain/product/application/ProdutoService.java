@@ -1,12 +1,12 @@
-package com.natodev.ecommerce.business.service;
+package com.natodev.ecommerce.domain.product.application;
 
-import com.natodev.ecommerce.controller.dto.request.ProdutoRequestDTO;
-import com.natodev.ecommerce.controller.dto.response.ProdutoResponseDTO;
+import com.natodev.ecommerce.domain.product.presentation.dto.request.ProdutoRequestDTO;
+import com.natodev.ecommerce.domain.product.presentation.dto.response.ProdutoResponseDTO;
 import com.natodev.ecommerce.domain.product.domain.entity.Categoria;
 import com.natodev.ecommerce.domain.product.domain.entity.Produto;
 import com.natodev.ecommerce.infrastructure.exception.CategoriaNaoExisteException;
-import com.natodev.ecommerce.infrastructure.repository.CategoriaRepository;
-import com.natodev.ecommerce.infrastructure.repository.ProdutoRepository;
+import com.natodev.ecommerce.domain.product.domain.repository.CategoriaRepository;
+import com.natodev.ecommerce.domain.product.domain.repository.ProdutoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

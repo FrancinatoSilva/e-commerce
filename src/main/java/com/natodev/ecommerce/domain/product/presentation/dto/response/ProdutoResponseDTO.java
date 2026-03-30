@@ -1,4 +1,4 @@
-package com.natodev.ecommerce.controller.dto.response;
+package com.natodev.ecommerce.domain.product.presentation.dto.response;
 
 import java.math.BigDecimal;
 import java.util.UUID;
