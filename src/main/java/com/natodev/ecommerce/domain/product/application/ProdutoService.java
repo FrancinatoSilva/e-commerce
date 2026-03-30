@@ -4,7 +4,7 @@ import com.natodev.ecommerce.domain.product.presentation.dto.request.ProdutoRequ
 import com.natodev.ecommerce.domain.product.presentation.dto.response.ProdutoResponseDTO;
 import com.natodev.ecommerce.domain.product.domain.entity.Categoria;
 import com.natodev.ecommerce.domain.product.domain.entity.Produto;
-import com.natodev.ecommerce.infrastructure.exception.CategoriaNaoExisteException;
+import com.natodev.ecommerce.domain.product.domain.exception.CategoriaNaoExisteException;
 import com.natodev.ecommerce.domain.product.domain.repository.CategoriaRepository;
 import com.natodev.ecommerce.domain.product.domain.repository.ProdutoRepository;
 import lombok.RequiredArgsConstructor;
