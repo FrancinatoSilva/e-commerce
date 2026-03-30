@@ -45,8 +45,8 @@ Para garantir que a aplicação esteja alinhada com as melhores práticas de mer
 - [x] Integração com PostgreSQL na Nuvem (Supabase)
 - [x] Implementação da Camada de Acesso a Dados (Repositories)
 - [x] Validação de Contexto e Conexão (Spring Boot Test)
-- [ ] Implementação de DTOs e Bean Validation (Próxima Issue)
-- [ ] Construção das Regras de Negócio (Services)
+- [x] Implementação de DTOs e Bean Validation (Próxima Issue)
+- [x] Construção das Regras de Negócio (Services)
 - [ ] Exposição de Endpoints REST (Controllers)
 
 ---
