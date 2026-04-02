@@ -3,7 +3,6 @@ package com.natodev.ecommerce.domain.product.presentation.controller;
 import com.natodev.ecommerce.domain.product.application.ProdutoService;
 import com.natodev.ecommerce.domain.product.presentation.dto.request.ProdutoRequestDTO;
 import com.natodev.ecommerce.domain.product.presentation.dto.response.ProdutoResponseDTO;
-import com.natodev.ecommerce.domain.user.presentation.dto.response.UsuarioResponseDTO;
 import com.natodev.ecommerce.shared.response.ApiResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -38,5 +37,4 @@ public class ProdutoController {
         return ResponseEntity
                 .ok(ApiResponse.sucesso(response));
     }
-
 }
