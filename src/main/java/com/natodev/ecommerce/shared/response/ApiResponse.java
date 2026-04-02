@@ -20,7 +20,7 @@ public class ApiResponse<T> {
     @Builder.Default
     private LocalDateTime timestamp = LocalDateTime.now();
 
-    public static <T> ApiResponse<T> successo(T data) {
+    public static <T> ApiResponse<T> sucesso(T data) {
         ApiResponse<T> response = new ApiResponse<>();
         response.setSuccess(true);
         response.setMessage("Sucesso");

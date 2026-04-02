@@ -22,13 +22,13 @@ public class UsuarioController {
     private final UsuarioService usuarioService;
 
     @PostMapping
-    public ResponseEntity<ApiResponse> salvarUsuario(
+    public ResponseEntity<ApiResponse<UsuarioResponseDTO>> salvarUsuario(
             @Valid @RequestBody UsuarioRequestDTO request) {
 
         UsuarioResponseDTO response = usuarioService.salvarUsuario(request);
         return ResponseEntity
                 .status(HttpStatus.CREATED)
-                .body(ApiResponse.successo(response));
+                .body(ApiResponse.sucesso(response));
     }
 
     @GetMapping
@@ -36,7 +36,7 @@ public class UsuarioController {
 
         List<UsuarioResponseDTO> response = usuarioService.listarUsuarios();
         return ResponseEntity
-                .ok(ApiResponse.successo(response));
+                .ok(ApiResponse.sucesso(response));
     }
 
     @GetMapping("/{id}")
@@ -45,7 +45,7 @@ public class UsuarioController {
 
         UsuarioResponseDTO response = usuarioService.buscarUsuarioPorId(id);
         return ResponseEntity
-                .ok(ApiResponse.successo(response));
+                .ok(ApiResponse.sucesso(response));
     }
 
     @PutMapping("/{id}")
@@ -55,11 +55,11 @@ public class UsuarioController {
 
         UsuarioResponseDTO response = usuarioService.atualizarUsuario(id, usuarioRequestDTO);
         return ResponseEntity
-                .ok(ApiResponse.successo(response));
+                .ok(ApiResponse.sucesso(response));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<ApiResponse<Void>> deletarUsuarioPorId(@PathVariable UUID id) {
+    public ResponseEntity<ApiResponse<Void>> deletarUsuario(@PathVariable UUID id) {
 
         usuarioService.deletarUsuario(id);
         return ResponseEntity
